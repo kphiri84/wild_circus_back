@@ -1,10 +1,8 @@
 const Sequelize = require('sequelize')
 const db = require('../database/db')
-const User = require('./User')
-const Reservation = require('./Reservation')
 
 module.exports = db.sequelize.define(
-    'user',
+    'users',
     {
         firstname : {
             type : Sequelize.STRING
@@ -27,6 +25,3 @@ module.exports = db.sequelize.define(
     }
 )
 
-User.associate = () =>{
-    User.hasMany(Reservation, { foreignKey: 'reservation_id' })
-}

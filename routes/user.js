@@ -12,7 +12,7 @@ process.env.SECRET_KEY = 'secret'
 
 
 Users.get('/', (req,res) => {
-  User.findAll()
+  User.findAll({include:[Reservation]})
   .then(user => res.json(user))
 })
 

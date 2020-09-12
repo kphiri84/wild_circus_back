@@ -15,5 +15,4 @@ const sequelize = new Sequelize('circus', 'root', 'ken2ken842', {
 db.sequelize = sequelize
 db.Sequelize = Sequelize
 
-
 module.exports = db

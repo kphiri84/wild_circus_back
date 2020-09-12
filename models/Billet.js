@@ -2,26 +2,25 @@ const Sequelize = require('sequelize')
 const db = require('../database/db')
 
 module.exports = db.sequelize.define(
-    'billet',
+    'billets', 
     {
-        category : {
-            type : Sequelize.STRING
+        category: {
+            type: Sequelize.STRING
         },
-        adults : {
-            type : Sequelize.INTEGER
+        adults: {
+            type: Sequelize.INTEGER
         },
         children: {
-            type : Sequelize.INTEGER
+            type: Sequelize.INTEGER
         },
         reduit: {
-            type : Sequelize.INTEGER
+            type: Sequelize.INTEGER
         },
         nombrePlace: {
-            type : Sequelize.INTEGER
-        },
-    }, 
+            type: Sequelize.INTEGER
+        }
+    },
     {
         timestamps : false,
     }
-)
-
+);

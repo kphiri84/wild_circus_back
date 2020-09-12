@@ -1,32 +1,35 @@
 const Sequelize = require('sequelize')
 const db = require('../database/db')
-const Reservation = require('./Reservation')
-const User = require('./User')
 
 module.exports = db.sequelize.define(
-    'reservation',
+    'reservations', 
     {
-        reservationDate : {
-            type : Sequelize.DATE
+        reservationDate: {
+            type: Sequelize.DATE
         },
-        sessionStart : {
-            type : Sequelize.DATE
+        sessionStart: {
+            type: Sequelize.DATE
         },
         sessionEnd: {
-            type : Sequelize.DATE
-        },
-        nbParticipant: {
-            type : Sequelize.INTEGER
+            type: Sequelize.DATE
         },
         price: {
-            type : Sequelize.INTEGER
+            type: Sequelize.INTEGER
         },
-    }, 
+        adults: {
+            type: Sequelize.INTEGER
+        },
+        children: {
+            type: Sequelize.INTEGER
+        },
+        reduit: {
+            type: Sequelize.INTEGER
+        },
+        category: {
+            type: Sequelize.STRING
+        }
+    },
     {
         timestamps : false,
     }
-)
-
-Reservation.associate = () =>{
-    Reservation.belongsTo(User, {  foreignKey: 'user_id' })
-}
+);
