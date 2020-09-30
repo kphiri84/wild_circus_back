@@ -30,7 +30,7 @@ module.exports = (app) => {
     models.billet.findAll()
         .then((billet) => res.json(billet));
   });
-
+}
 app.get("/", (req, res) => {
     res.json({message: "Hello World 2"})
 })
