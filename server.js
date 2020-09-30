@@ -23,6 +23,14 @@ require('./app/routes/reservation.routes')(app);
 require('./app/routes/billet.routes')(app); 
  
 
+const models = require("../models");
+
+module.exports = (app) => {
+  app.get("/billets", (req, res) => {
+    models.billet.findAll()
+        .then((billet) => res.json(billet));
+  });
+
 app.get("/", (req, res) => {
     res.json({message: "Hello World 2"})
 })
