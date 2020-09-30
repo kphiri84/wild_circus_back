@@ -27,6 +27,11 @@ app.get("/", (req, res) => {
     res.json({message: "Hello World"})
 })
 
+app.get("/billets", (req, res) => {
+    models.billet.findAll()
+        .then((billet) => res.json(billet));
+  });
+
 db.sequelize.sync().then(() => {
     console.log('Drop and Resync Db')
 })
