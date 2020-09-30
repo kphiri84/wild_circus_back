@@ -26,14 +26,14 @@ require('./app/routes/billet.routes')(app);
 const models = require("../models");
 
 
-  app.get("/billets", (req, res) => {
+  app.get("/", (req, res) => {
     models.billet.findAll()
         .then((billet) => res.json(billet));
   });
 
-app.get("/", (req, res) => {
-    res.json({message: "Hello World 2"})
-})
+// app.get("/", (req, res) => {
+//     res.json({message: "Hello World 2"})
+// })
 
 db.sequelize.sync().then(() => {
     console.log('Drop and Resync Db')
