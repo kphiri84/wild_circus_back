@@ -4,6 +4,7 @@ module.exports = {
     PASSWORD: "91104b95",
     DB: "heroku_0e7f1878f7bf5e8",
     dialect: "mysql",
+    port: 3306,
     pool: {
         max: 5,
         min: 0,
